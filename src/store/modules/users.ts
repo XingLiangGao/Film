@@ -1,14 +1,7 @@
 import {
   Commit, GetterTree, MutationTree, ActionTree,
 } from 'vuex';
-// eslint-disable-next-line import/no-cycle
-import { RootState } from '../types';
-
-export interface UsersState {
-  token: string;
-  isLogin: boolean;
-  isNetwork: boolean;
-}
+import { RootState, UsersState } from '../types';
 
 const data: UsersState = {
   token: '',
