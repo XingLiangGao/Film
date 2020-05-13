@@ -7,6 +7,6 @@ import article from '@/api/users-api';
 
 // 导出接口
 export default {
-    article,
-    // ……
+  article,
+  // ……
 };
