@@ -3,6 +3,7 @@ import VueRouter, { RouteConfig } from 'vue-router';
 
 const Home = () => import(/* webpackChunkName: "home" */ '../views/Home.vue');
 const About = () => import(/* webpackChunkName: "about" */ '../views/About.vue');
+const Movie = () => import(/* webpackChunkName: "movie" */ '../views/Movie.vue');
 
 Vue.use(VueRouter);
 
@@ -16,6 +17,11 @@ const routes: RouteConfig[] = [
     path: '/about',
     name: 'About',
     component: About,
+  },
+  {
+    path: '/movie',
+    name: 'Movie',
+    component: Movie,
   },
 ];
 
