@@ -40,9 +40,7 @@ export default class HelloWord extends Vue {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-@import "../common/color.scss";
 h3 {
   margin: 40px 0 0;
 }
@@ -61,6 +59,5 @@ a {
   width: 100px;
   height: 100px;
   background: yellow;
-  border: $border;
 }
 </style>
