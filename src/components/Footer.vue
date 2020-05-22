@@ -2,7 +2,7 @@
   <div class="footer">
     <div v-for="(item, index) in footerList" :key="index"
       :class="tabIndex===index?'ft-selected':''"
-      @click="tabIndex=index">
+      @click="toLink(index, item.pathName)">
       <img :src="item.imgUrl" alt="">
       <span>{{item.name}}</span>
     </div>
@@ -15,6 +15,7 @@ import { Component, Vue } from 'vue-property-decorator';
 interface FooterListInterface {
   imgUrl: string;
   name: string;
+  pathName: string;
 }
 
 @Component
@@ -23,22 +24,31 @@ export default class Footer extends Vue {
     {
       imgUrl: '',
       name: '电影',
+      pathName: 'Movie',
     },
     {
       imgUrl: '',
       name: '影院',
+      pathName: 'Cinema',
     },
     {
       imgUrl: '',
       name: '资讯',
+      pathName: 'Information',
     },
     {
       imgUrl: '',
       name: '我的',
+      pathName: 'Me',
     },
   ]
 
   tabIndex = 0
+
+  toLink(index: number, pathName: string) {
+    this.tabIndex = index;
+    this.$router.push(pathName);
+  }
 }
 </script>
 

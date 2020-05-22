@@ -17,13 +17,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import ListItem from '@/components/MovieListItem.vue';
-
-interface ItemListInterface {
-  imgUrl: string;
-  title: string;
-  star: string;
-  detail: string;
-}
+import { ItemListInterface } from './types';
 
 @Component({
   components: {

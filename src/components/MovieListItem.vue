@@ -13,13 +13,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
-
-interface ItemListInterface {
-  imgUrl: string;
-  title: string;
-  star: string;
-  detail: string;
-}
+import { ItemListInterface } from '@/views/movie/types';
 
 @Component
 export default class MovieListItem extends Vue {
