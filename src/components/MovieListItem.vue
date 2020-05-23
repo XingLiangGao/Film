@@ -1,13 +1,13 @@
 <template>
   <div class="list-item">
-    <img src="" alt="">
+    <img class="moiveImg" :src="$props.item.images.small" alt="">
     <div>
       <p><span>{{$props.item.title}}</span><img src="" alt=""></p>
-      <span>观众评分</span>
-      <span>主演：{{$props.item.star}}</span>
+      <span>观众评分: {{$props.item.rating.average}}</span>
+      <span>主演：{{$props.item.casts[0].name}}</span>
       <span></span>
     </div>
-    <button>购票</button>
+    <button class="buy-btn">购票</button>
   </div>
 </template>
 
@@ -24,10 +24,20 @@ export default class MovieListItem extends Vue {
 <style lang="scss">
 .list-item {
   display: flex;
-  width: 100%;
+  margin-bottom: 20px;
+  flex-direction: column;
+  .moiveImg {
+    width: 135px;
+    height: 200px;
+    display: block;
+  }
   div {
     display: flex;
     flex-direction: column;
+  }
+  .buy-btn {
+    display: block;
+    text-align: left;
   }
 }
 </style>

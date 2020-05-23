@@ -15,13 +15,17 @@ interface ComingSoonInterface {
 const movie = {
   // 正在热映
   inTheaters() {
-    return axios.get('/v2/movie/in_theaters');
+    return axios.get('/api/v2/movie/in_theaters');
   },
+  // // 即将上映
+  // comingSoon(params: ComingSoonInterface) {
+  //   return axios.get('/api/v2/movie/coming_soon', {
+  //     params,
+  //   });
+  // },
   // 即将上映
-  comingSoon(params: ComingSoonInterface) {
-    return axios.get('/gateway', {
-      params,
-    });
+  comingSoon() {
+    return axios.get('/api/v2/movie/coming_soon');
   },
 };
 

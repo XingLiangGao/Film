@@ -7,21 +7,23 @@ module.exports = {
         views: '@/views',
       },
     },
-    externals: { // cdn 外链，避免包太大，首屏优化
-      vue: 'Vue',
+    externals: { 
+      'vue': 'Vue',
       'vue-router': 'VueRouter',
-      vuex: 'Vuex',
+      'vuex': 'Vuex'
     },
   },
   devServer: {
+    port: "8080",
     proxy: {
-      '/gateway': {
-        target: 'https://m.maizuo.com', // 对应自己的接口
+      '/api': {
+        target: 'https://douban.uieee.com', 
         changeOrigin: true,
+        ws: true,
         pathRewrite: {
-          '^/gateway': '/gateway',
-        },
-      },
-    },
+          '^/api': ''
+        }
+      }
+    }
   },
 };
