@@ -13,4 +13,15 @@ module.exports = {
       vuex: 'Vuex',
     },
   },
+  devServer: {
+    proxy: {
+      '/gateway': {
+        target: 'https://m.maizuo.com', // 对应自己的接口
+        changeOrigin: true,
+        pathRewrite: {
+          '^/gateway': '/gateway',
+        },
+      },
+    },
+  },
 };

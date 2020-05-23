@@ -3,7 +3,8 @@
     <!-- tab -->
     <div class="tab">
       <span v-for="(item, index) in tabList" :key="index"
-      :class="tabIndex">{{item}}</span>
+      @click="switchTab(index)"
+      :class="tabIndex===index?'ft-selected br-selected select-border':''">{{item}}</span>
     </div>
     <!-- 列表 -->
     <div class="list">
@@ -17,6 +18,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import ListItem from '@/components/MovieListItem.vue';
+import movie from '@/api/movie';
 import { ItemListInterface } from './types';
 
 @Component({
@@ -37,6 +39,23 @@ export default class Movie extends Vue {
       detail: '',
     },
   ]
+
+  mounted(): void {
+    movie.comingSoon({
+      cityId: 110100,
+      pageNum: 1,
+      pageSize: 10,
+      type: 1,
+      k: 1644298,
+    })
+      .then((res: any) => {
+        console.log(this);
+      });
+  }
+
+  switchTab(index: number) {
+    this.tabIndex = index;
+  }
 }
 </script>
 
@@ -44,5 +63,12 @@ export default class Movie extends Vue {
 .tab {
   display: flex;
   justify-content: space-around;
+  span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 100px;
+    font-size: 28px;
+  }
 }
 </style>

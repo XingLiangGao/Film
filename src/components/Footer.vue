@@ -3,7 +3,7 @@
     <div v-for="(item, index) in footerList" :key="index"
       :class="tabIndex===index?'ft-selected':''"
       @click="toLink(index, item.pathName)">
-      <img :src="item.imgUrl" alt="">
+      <span class="iconfont" v-html="item.icon"></span>
       <span>{{item.name}}</span>
     </div>
   </div>
@@ -13,7 +13,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 interface FooterListInterface {
-  imgUrl: string;
+  icon: string;
   name: string;
   pathName: string;
 }
@@ -22,24 +22,24 @@ interface FooterListInterface {
 export default class Footer extends Vue {
   footerList: Array<FooterListInterface> = [
     {
-      imgUrl: '',
+      icon: '&#xe8ae;',
       name: '电影',
-      pathName: 'Movie',
+      pathName: '/',
     },
     {
-      imgUrl: '',
+      icon: '&#xe8c0;',
       name: '影院',
-      pathName: 'Cinema',
+      pathName: '/cinema',
     },
     {
-      imgUrl: '',
+      icon: '&#xe771;',
       name: '资讯',
-      pathName: 'Information',
+      pathName: '/information',
     },
     {
-      imgUrl: '',
+      icon: '&#xe728;',
       name: '我的',
-      pathName: 'Me',
+      pathName: '/me',
     },
   ]
 
@@ -63,10 +63,13 @@ export default class Footer extends Vue {
   justify-content: space-around;
   div {
     width: 100%;
+    height: 100px;
+    font-size: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    span:first-child { margin-bottom: 6px; }
   }
 }
 </style>

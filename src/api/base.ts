@@ -6,7 +6,7 @@ interface Base {
   bd: string;
 }
 const base: Base = {
-  sq: 'https://xxxx111111.com/api/v1',
+  sq: window.location.origin,
   bd: 'http://xxxxx22222.com/api',
 };
 

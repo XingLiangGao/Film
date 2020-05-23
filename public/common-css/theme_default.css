@@ -1,0 +1,28 @@
+/* 文字颜色 */
+.ft-default { color: #fff; }
+.ft-selected { color: #ff5f16; }
+
+/* 背景颜色 */
+.bg-default { background: #fff; }
+.bg-selected { background: #ff5f16; }
+.bg-mount { background: #f4f4f4; }
+
+/* 边框颜色 */
+.br-default { border-color: #fff; }
+.br-selected { border-color: #ff5f16; }
+
+/* icon */
+@font-face {
+  font-family: 'iconfont';  /* project id 1838131 */
+  src: url('//at.alicdn.com/t/font_1838131_dqgzaayk5l6.eot');
+  src: url('//at.alicdn.com/t/font_1838131_dqgzaayk5l6.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1838131_dqgzaayk5l6.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1838131_dqgzaayk5l6.woff') format('woff');
+}
+
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:24px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;}
